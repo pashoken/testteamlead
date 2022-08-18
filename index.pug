@@ -1,0 +1,118 @@
+h3//output:index.html
+
+doctype html 
+html(lang="ru")
+  head
+    title LEVEL UP
+    meta(charset='UTF-8'  name="viewport" content="initial-scale=1.0")
+    link(rel='stylesheet' href='./css/main.min.css')
+    link(rel='stylesheet' href='./css/timer.css')
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css")
+  body
+    mixin reviewer(name, text)
+      .col
+        img(src="./img/man.jpg")
+        .name.reviewer= name
+        .review.reviewer= text
+    mixin ingredient(name)
+      .card
+        img(src="./img/ingredient.png").ingredient_img
+        .ingredient= name
+    .wrapper
+      section.promo1.fullscreen
+        video(loop autoplay muted)
+          source(src="./img/house.mp4")
+        .fullscreen_body
+          h3
+            | LevelUp
+          .row
+            img(src="./img/prod.png").image
+            .benefits
+              ul
+                li Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                li et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                li velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          a.link
+           | BUY now
+      section.structure.fullscreen
+        .fullscreen_body.row
+            .col
+              +ingredient('nice shit')
+              +ingredient('truly nice shit')
+              +ingredient('absolutely nice shit')
+            .col.prod
+              img(src="./img/prod.png").image
+              .link
+                | buy now
+            .col
+              +ingredient('absolutely nice shit')
+              +ingredient('truly nice shit')
+              +ingredient('just shit')
+      section.reviews.fullscreen
+        .swiper.mySwiper
+          .swiper-wrapper
+            .swiper-slide
+              +reviewer('Catelyn Stark', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+            .swiper-slide
+              +reviewer('Sansa Stark', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+            .swiper-slide
+              +reviewer('Arya Stark', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+          .swiper-pagination
+          .swiper-button-next
+          .swiper-button-prev
+      section.promo2.fullscreen
+        .fullscreen_body
+          .row
+            img(src='./img/doctor.png').doc_img
+            .info
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .list
+            ul
+              li Lorem 
+              li Exercitation
+              li Laborum
+          .link
+            | buy now
+      section.order.fullscreen
+        .fullscreen_body
+          h3 LevelUp
+          .timer
+            #countdown.countdown
+              .countdown-number
+                span.days.countdown-time
+                span.countdown-text Days
+              .countdown-number
+                span.hours.countdown-time
+                span.countdown-text Hours
+              .countdown-number
+                span.minutes.countdown-time
+                span.countdown-text Minutes
+              .countdown-number
+                span.seconds.countdown-time
+                span.countdown-text Seconds
+          .row.price
+            .col
+              img(src='./img/prod.png').last_img
+              .row.prices
+                span.crossed 350 $
+                span.new 100 $
+            form
+              fieldset
+                label(for="name" id="label1") Name
+                input(type='text' name="name" id='name')
+              fieldset
+                label(for="name" id="label2") Number
+                input(type='number' name="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id='number')
+              fieldset
+                .link
+                  | buy now
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+      script(src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js")
+      script(src='./js/main.js')
+      script(src="./js/timer.js")
+        
+        
+        

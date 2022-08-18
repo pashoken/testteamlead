@@ -249,8 +249,12 @@ html, body
   width: 100%
   display: flex
   video
+    top: 0
+    left: 0
     position: absolute
     width: 100%
+    height: 100%
+    object-fit: cover
     z-index: 0
 .fullscreen_body
   padding: 40px 30px
@@ -463,7 +467,7 @@ fieldset
   .fullscreen_body
     align-self: stretch
   html, body
-    font-size: 16px
+    font-size: 20px
   video
     position: absolute
     width: 100%
@@ -475,28 +479,39 @@ fieldset
     margin-bottom: 100px
     display: inline-block
     animation: wiggle 2.5s infinite
-    width: 150px
-    height: 250px
+    width: 200px
+    height: 300px
   .last_img
     margin-bottom: 20px
     display: inline-block
-    width: 150px
-    height: 250px
+    width: 200px
+    height: 300px
   .ingredient_img
-    width: 100px
-    height: 50px
+    width: 150px
+    height: 100px
     display: block
   .doc_img
-    width: 200px
-    height: 250px
+    width: 350px
+    height: 400px
     margin-right: 10px
-@media(max-width:500px)
+@media(max-width:450px)
+  .right
+    transform: translateX(20%)
+  html, body
+    font-size: 16px
   .fullscreen_body
     padding: 10px
+    h3
+      margin-top: 0
     .link
       line-height: 30px
   .prod
     justify-content: flex-end !important
+  .last_img
+    margin-bottom: 20px
+    display: inline-block
+    width: 120px
+    height: 180px
   .image
     margin-bottom: 80px
     display: inline-block
@@ -508,8 +523,8 @@ fieldset
     height: 50px
     display: block
   .doc_img
-    width: 200px
-    height: 250px
+    width: 180px
+    height: 220px
     margin-right: 10px
   .structure > .fullscreen_body > .row
     height: 70%
